@@ -1,6 +1,6 @@
 require 'pry-byebug'
 
-puts "Welcome to Euro jackpot!"
+puts "Welcome to EuroJackpot!"
 puts "Try out your luck..."
 
 num_five = nil
@@ -37,5 +37,20 @@ while additional_two.length < 2
   end
 end
 
-puts "Your combinaton is: #{first_five}"
-puts "Your additional picks are: #{additional_two}"
+my_pick = first_five + additional_two
+puts "Your combinaton is: #{my_pick}"
+
+drawn_numbers_five = []
+while drawn_numbers_five.length < 5
+  drawn_num_five = rand(1..50)
+  drawn_numbers_five << drawn_num_five
+end
+
+drawn_numbers_two = []
+while drawn_numbers_two.length < 2
+  drawn_num_two = rand(1..10)
+  drawn_numbers_two << drawn_num_two
+end
+
+drawn_numbers = drawn_numbers_five + drawn_numbers_two
+puts "Winning combination is: #{drawn_numbers}"
