@@ -38,19 +38,39 @@ while additional_two.length < 2
 end
 
 my_pick = first_five + additional_two
+#my_pick = [1, 2, 3, 4, 5, 6, 7]
 puts "Your combinaton is: #{my_pick}"
 
-drawn_numbers_five = []
-while drawn_numbers_five.length < 5
-  drawn_num_five = rand(1..50)
-  drawn_numbers_five << drawn_num_five
+draw = 0
+year = 0
+
+loop do
+  drawn_numbers_five = []
+  drawn_numbers_two = []
+
+  while drawn_numbers_five.length < 5
+    drawn_num_five = rand(1..50)
+    drawn_numbers_five << drawn_num_five
+  end
+  
+  while drawn_numbers_two.length < 2
+    drawn_num_two = rand(1..10)
+    drawn_numbers_two << drawn_num_two
+  end
+
+  drawn_numbers = drawn_numbers_five + drawn_numbers_two
+  #drawn_numbers = [1, 2, 3, 4, 5, 6, 7]
+  
+  if my_pick.sort == drawn_numbers.sort
+    puts "YOU JUST WON EUROJACKPOT!!!"
+    break
+  else
+    puts "Winning combination was: #{drawn_numbers} :( Try again!"
+    draw += 1
+      if draw == 104
+        year += 1
+      end
+  end
 end
 
-drawn_numbers_two = []
-while drawn_numbers_two.length < 2
-  drawn_num_two = rand(1..10)
-  drawn_numbers_two << drawn_num_two
-end
-
-drawn_numbers = drawn_numbers_five + drawn_numbers_two
-puts "Winning combination is: #{drawn_numbers}"
+puts "It only took you #{year} years!!!"
